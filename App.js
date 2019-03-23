@@ -8,6 +8,18 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import {
+  createBottomTabNavigator,
+  createStackNavigator,
+  createAppContainer,
+} from 'react-navigation';
+
+import Home from './Main/home.js';
+import Login from './LoginAndRegister/Login.js';
+import Register from './LoginAndRegister/Register.js';
+import Shop from './Main/namakedai.js';
+import Payment from './Main/payment.js';
+import accesories from './Main/accesories.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,7 +29,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+class App extends React.Component{
   render() {
     return (
       <View style={styles.container}>
@@ -28,6 +40,20 @@ export default class App extends Component<Props> {
     );
   }
 }
+
+const StackNavi = createStackNavigator ({
+  Home: {screen: Home,},
+  Login: {screen: Login,},
+  Register: {screen: Register,},
+  Shop: {screen: Shop,},
+  Payment:  {screen: Payment,},
+  accesories:   {screen: accesories,},
+},{
+  headerMode: 'none',
+  initialRouteName: 'Payment',
+  })
+
+export default StackNavi;
 
 const styles = StyleSheet.create({
   container: {
