@@ -2,24 +2,16 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default class payment extends React.Component{
+export default class Home extends React.Component{
   render(){
     return(
       <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>PAYMENT</Text>
+        <Text>HOLA</Text>
         <Icon name="home" size={40} color="purple" />
 
-        <View>
-          <Text> Cash </Text>
-          </View>
-
-          <View>
-          <Text> CREDIT CARD</Text>
-          </View>
-
-          <View>
-          <Text> generate bills</Text>
-          </View>
+        <View style={styles.kotak}>
+          <Text>Pick Service</Text>
+        </View>
 
       </SafeAreaView>
     )

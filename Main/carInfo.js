@@ -2,27 +2,27 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default class shop extends React.Component{
+export default class Home extends React.Component{
   render(){
     return(
-      <SafeAreaView style={{ flex: 1, }}>
-        <Text>SHOPS</Text>
+      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>CAR INFO</Text>
+
 
         <View style={styles.kotak}>
-          <Text>Service</Text>
-          <Text>Battery</Text>
+          <Text>Plate No</Text>
         </View>
 
-        <View>
-          <Text>Workshop Ahmad</Text>
-          <Text>Batteri RX80</Text>
-          <Text>RM 230</Text>
+        <View style={styles.kotak}>
+          <Text>model</Text>
         </View>
 
-        <View style={{marginTop:15}}>
-          <Text>Kedai MUTHU</Text>
-          <Text>Bateri KERETA</Text>
-          <Text>RM 180</Text>
+        <View style={styles.kotak}>
+          <Text>make</Text>
+        </View>
+
+        <View style={styles.kotak}>
+          <Text>year</Text>
         </View>
 
       </SafeAreaView>
