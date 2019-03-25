@@ -13,6 +13,7 @@ import {
   createStackNavigator,
   createAppContainer,
 } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import Home from './Main/home.js';
 import Login from './LoginAndRegister/Login.js';
@@ -29,6 +30,10 @@ import Steering from './Main/steering.js';
 import Tyre from './Main/tyre.js';
 import carInfo from './Main/carInfo.js';
 import ownerInfo from './Main/ownerInfo.js';
+import Booking from './Main/booking.js';
+import Receipt from './Main/receipt.js';
+
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -65,13 +70,55 @@ const StackNavi = createStackNavigator ({
   Steering: {screen: Steering,},
   Tyre: {screen: Tyre,},
   carInfo: {screen: carInfo,},
-  ownerInfo: {screen: ownerInfo},
+  Booking: {screen: Booking,},
+  Receipt: {screen: Receipt,},
+
 },{
   headerMode: 'none',
-  initialRouteName: 'Home',
+  initialRouteName: 'Login',
   })
 
-export default StackNavi;
+const TabNavi = createBottomTabNavigator({
+  Home: {
+    screen: StackNavi,
+    navigationOptions:{
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ tintColor, focused }) => (
+      <Icon
+        name={focused ? 'ios-chatboxes' : 'ios-chatboxes-outline'}
+        size={26}
+        style={{ color: tintColor }}
+      />
+  )}
+  },
+  ownerInfo: {
+    screen: ownerInfo,
+    navigationOptions:{
+      tabBarLabel: 'Settings',
+      tabBarIcon: ({ tintColor, focused }) => (
+      <Icon
+        name={focused ? 'ios-chatboxes' : 'ios-chatboxes-outline'}
+        size={26}
+        style={{ color: tintColor }}
+      />
+  )}},
+},{
+  tabBarOptions: {
+        activeTintColor: '#2d3693',
+        inactiveTintColor: '#ccc',
+        indicatorStyle:{
+          bottom: 0,
+          backgroundColor: '#2d3693',
+        },
+      showIcon: true,
+      style: { height: 48,backgroundColor: '#fff',  },
+      showLabel: true,
+      labelStyle: {
+        fontSize: 10,
+      }
+    }
+})
+export default TabNavi;
 
 const styles = StyleSheet.create({
   container: {

@@ -18,35 +18,43 @@ export default class Home extends React.Component{
           <Text>battery</Text>
         </TouchableOpacity>
 
-        <View style={styles.kotak}>
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Belts')}>
+          <Icon2 name="car" size={20} style={{marginRight:8}}/>
         <Text>belts & hoses</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.kotak}>
+
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Blackoil')}>
+          <Icon2 name="car" size={20} style={{marginRight:8}}/>
         <Text>blackoil</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.kotak}>
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Brake')}>
+          <Icon2 name="car" size={20} style={{marginRight:8}}/>
         <Text>brake</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.kotak}>
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Enginelight')}>
+          <Icon2 name="car" size={20} style={{marginRight:8}}/>
         <Text>enginelight</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.kotak}>
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Exhaust')}>
+          <Icon2 name="car" size={20} style={{marginRight:8}}/>
         <Text>exhaust</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={{flexDirection:'row'}}>
-          <View style={styles.kotak}>
-          <Text>steering</Text>
-          </View>
 
-          <View style={styles.kotak}>
-          <Text>tyre</Text>
-          </View>
-        </View>
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Steering')}>
+          <Icon2 name="car" size={20} style={{marginRight:8}}/>
+        <Text>steering</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Tyre')}>
+          <Icon2 name="car" size={20} style={{marginRight:8}}/>
+        <Text>tyre</Text>
+        </TouchableOpacity>
+
 
 
       </SafeAreaView>

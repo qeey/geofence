@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ScrollView,SafeAreaView} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 export default class Home extends React.Component{
@@ -16,18 +16,21 @@ export default class Home extends React.Component{
           <Text>Workshop Abu</Text>
           <Text>RM 200 - RM 300</Text>
         </TouchableOpacity>
-        <View style={styles.kotak}>
+
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Booking')}>
           <Text>Workshop Muthu</Text>
           <Text>RM 200 - RM 300</Text>
-        </View>
-        <View style={styles.kotak}>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Booking')}>
           <Text>Workshop 123</Text>
           <Text>RM 200 - RM 300</Text>
-        </View>
-        <View style={styles.kotak}>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Booking')}>
           <Text>Kedai Bateri Stylo</Text>
           <Text>RM 200 - RM 280</Text>
-        </View>
+        </TouchableOpacity>
       </ScrollView>
       </SafeAreaView>
     )
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
   header:{
     height:54,
     alignItems:'center',
-    // justifyContent:'ce nter',
+    //justifyContent:'center',
     borderBottomWidth:1,
     flexDirection:'row',
     paddingLeft:10

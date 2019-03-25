@@ -1,29 +1,30 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Home extends React.Component{
   render(){
     return(
-      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>CAR INFO</Text>
+      <SafeAreaView style={{ flex: 1, }}>
+      <View style={styles.header}>
+        <Text style={{fontSize:20}}>CAR INFORMATION</Text>
+      </View>
 
+      <ScrollView style={{margin:15}}>
 
-        <View style={styles.kotak}>
-          <Text>Plate No</Text>
-        </View>
+          <Text>MODEL : </Text>
 
-        <View style={styles.kotak}>
-          <Text>model</Text>
-        </View>
+          <Text>MAKE :</Text>
 
-        <View style={styles.kotak}>
-          <Text>make</Text>
-        </View>
+          <Text>YEAR : </Text>
 
-        <View style={styles.kotak}>
-          <Text>year</Text>
-        </View>
+          <Text>PLATE NO. : </Text>
+
+      </ScrollView>
+
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Home')}>
+          <Text>SAVE</Text>
+        </TouchableOpacity>
 
       </SafeAreaView>
     )
@@ -37,4 +38,13 @@ const styles = StyleSheet.create({
     padding:10,
     marginTop: 10
   },
+
+  header:{
+    height:54,
+    alignItems:'center',
+    //justifyContent:'center',
+    borderBottomWidth:1,
+    flexDirection:'row',
+    paddingLeft:10
+  }
 })

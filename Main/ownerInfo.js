@@ -7,15 +7,20 @@ export default class Home extends React.Component{
     return(
       <SafeAreaView style={{ flex: 1,}}>
         <View style={styles.header}>
-          <Text style={{fontSize:20}}>OWNER's INFO</Text>
+          <Text style={{fontSize:20}}>SETTINGS</Text>
         </View>
 
         <Icon name="home" size={40} color="purple" />
 
         <View style={styles.kotak}>
-          <Text>Pick Service</Text>
+          <Text>Name: Maimunah Abu Bakar </Text>
+          <Text>Email: munahRoxx@gmail.com</Text>
+          <Text>Phone No: +6012 - 34567890</Text>
         </View>
 
+        <View style={styles.kotak}>
+          <Text>Car Info</Text>
+        </View>
       </SafeAreaView>
     )
   }

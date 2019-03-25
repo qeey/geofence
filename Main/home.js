@@ -1,57 +1,33 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet,ScrollView, Text,TouchableOpacity, View, SafeAreaView} from 'react-native';
+import {Platform, StyleSheet,ScrollView, Text,TouchableOpacity,Dimensions, ImageBackground, View, Image, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import DatePicker from 'react-native-datepicker'
+
 
 export default class Home extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {date:"2016-05-15"}
-  }
-
-  render(){
+render(){
     return(
       <SafeAreaView style={{ flex: 1, }}>
       <View style={styles.header}>
         <Text style={{fontSize:20}}>MAIN</Text>
       </View>
+      {/*<ImageBackground source={{uri:'https://previews.123rf.com/images/ybonce/ybonce1504/ybonce150400008/39379149-blue-triangle-abstract-background-modern-style-on-isolated.jpg'}}
+       style={{height:Dimensions.get('window').height, width: Dimensions.get('window').width}}> */}
 
-      <ScrollView>
-
-        <View style={styles.search}>
-          <Text>Pick Service</Text>
-        </View>
-
-        <DatePicker
-        style={{width: 200}}
-        date={this.state.date}
-        mode="date"
-        placeholder="select date"
-        format="YYYY-MM-DD"
-        minDate="2018-05-01"
-        maxDate="2020-06-01"
-        confirmBtnText="Confirm"
-        cancelBtnText="Cancel"
-        customStyles={{
-          dateIcon: {
-            position: 'absolute',
-            left: 0,
-            top: 4,
-            marginLeft: 0
-          },
-          dateInput: {
-            marginLeft: 36
-          }
-          // ... You can check the source to find the other keys.
-        }}
-        onDateChange={(date) => {this.setState({date: date})}}
-      />
+      <ScrollView style={{margin:15}}>
+        <TouchableOpacity style={styles.kotak} onPress={() => this.props.navigation.navigate('Service')}>
+          <Text>Select Service</Text>
+        </TouchableOpacity>
 
 
+
+      <Image
+        source={{uri:'https://news.nationalgeographic.com/content/dam/news/2018/05/17/you-can-train-your-cat/02-cat-training-NationalGeographic_1484324.jpg'}}
+        style = {{height:150, width:150}}/>
 
       </ScrollView>
+      {/*</ImageBackground> */}
 
-      <TouchableOpacity style={styles.add} onPress={() => this.props.navigation.navigate('Service')}>
+      <TouchableOpacity style={styles.add} onPress={() => this.props.navigation.navigate('carInfo')}>
         <Icon name= "pluscircleo"  size= {50} color="purple"/>
       </TouchableOpacity>
 
@@ -66,19 +42,19 @@ const styles = StyleSheet.create({
     marginLeft:15,
     marginRight:15,
     borderWidth: 1,
-    backgroundColor: '#eec64f',
+    // backgroundColor: '#eec64f',
     padding:10,
     marginTop: 10
   },
   add:{
     position:'absolute',
-    bottom:70,
+    bottom:30,
     right:50,
   },
   header:{
     height:54,
     alignItems:'center',
-    justifyContent:'center',
+    //justifyContent:'center',
     borderBottomWidth:1
   }
 })
