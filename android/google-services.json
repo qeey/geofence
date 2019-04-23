@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "613754966983",
+    "firebase_url": "https://geofence-3b810.firebaseio.com",
+    "project_id": "geofence-3b810",
+    "storage_bucket": "geofence-3b810.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613754966983:android:023d3e2ec3ab96bf",
+        "android_client_info": {
+          "package_name": "com.qila.geofence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613754966983-30g973dpjpc8i63gkv52tget2j21jh2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArEA5AJtUAQaSZxP58Ufe2sP58OJ9SdyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613754966983-30g973dpjpc8i63gkv52tget2j21jh2q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "613754966983-45qq6fqrkdeut72f3eepf80agc35aj6l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.qila.geofence"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
