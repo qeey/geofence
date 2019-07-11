@@ -13,9 +13,9 @@ import {
   createStackNavigator,
   createAppContainer,
 } from 'react-navigation';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Home from './Main/home.js';
+// import Home from './Main/home.js';
 import Login from './LoginAndRegister/Login.js';
 import Register from './LoginAndRegister/Register.js';
 import Payment from './Main/payment.js';
@@ -31,7 +31,15 @@ import Tyre from './Main/tyre.js';
 import carInfo from './Main/carInfo.js';
 import ownerInfo from './Main/ownerInfo.js';
 import Booking from './Main/booking.js';
-import Receipt from './Main/receipt.js';
+
+//MAIN
+import home from './MainTab/home.js';
+import profile from './MainTab/profile.js';
+import lists from './MainTab/lists.js';
+import settings from './MainTab/settings.js';
+import history from './MainTab/history.js';
+import payment from './MainTab/payment.js';
+
 
 
 
@@ -55,70 +63,88 @@ class App extends React.Component{
   }
 }
 
-const StackNavi = createStackNavigator ({
-  Home: {screen: Home,},
-  Login: {screen: Login,},
-  Register: {screen: Register,},
-  Payment:  {screen: Payment,},
-  Service:   {screen: Service,},
-  Battery: {screen: Battery,},
-  Belts: {screen: Belts,},
-  Blackoil: {screen: Blackoil,},
-  Brake: {screen: Brake,},
-  Enginelight : {screen: Enginelight,},
-  Exhaust: {screen: Exhaust,},
-  Steering: {screen: Steering,},
-  Tyre: {screen: Tyre,},
-  carInfo: {screen: carInfo,},
-  Booking: {screen: Booking,},
-  Receipt: {screen: Receipt,},
-
-},{
-  headerMode: 'none',
-  initialRouteName: 'Login',
-  })
+const homeStack = createStackNavigator({
+  First :{screen :home,},
+  Lists : {screen: lists,},
+}, {headerMode:'none'})
 
 const TabNavi = createBottomTabNavigator({
-  Home: {
-    screen: StackNavi,
+  Yada: {
+    screen: homeStack,
     navigationOptions:{
-      tabBarLabel: 'Home',
+      tabBarLabel: 'home',
       tabBarIcon: ({ tintColor, focused }) => (
       <Icon
-        name={focused ? 'ios-chatboxes' : 'ios-chatboxes-outline'}
+        name={focused ? 'home' : 'home-outline'}
         size={26}
         style={{ color: tintColor }}
       />
   )}
   },
-  ownerInfo: {
-    screen: ownerInfo,
+  History: {
+    screen: history,
     navigationOptions:{
-      tabBarLabel: 'Settings',
+      tabBarLabel: 'History',
       tabBarIcon: ({ tintColor, focused }) => (
       <Icon
-        name={focused ? 'ios-chatboxes' : 'ios-chatboxes-outline'}
+        name={focused ? 'history' : 'history'}
         size={26}
         style={{ color: tintColor }}
       />
   )}},
+  Profile: {
+    screen: profile,
+    navigationOptions:{
+      tabBarLabel: 'Profile',
+      tabBarIcon: ({ tintColor, focused }) => (
+      <Icon
+        name={focused ? 'account' : 'account-outline'}
+        size={26}
+        style={{ color: tintColor }}
+      />
+  )}
+  },
+  Settings: {
+    screen: settings,
+    navigationOptions:{
+      tabBarLabel: 'Settings',
+      tabBarIcon: ({ tintColor, focused }) => (
+      <Icon
+        name={focused ? 'settings' : 'settings-outline'}
+        size={26}
+        style={{ color: tintColor }}
+      />
+  )}
+  },
 },{
   tabBarOptions: {
-        activeTintColor: '#2d3693',
+        activeTintColor: '#289C3B',
         inactiveTintColor: '#ccc',
         indicatorStyle:{
           bottom: 0,
-          backgroundColor: '#2d3693',
+          backgroundColor: '#289C3B',
         },
       showIcon: true,
-      style: { height: 48,backgroundColor: '#fff',  },
+      style: { height: 48,backgroundColor: '#fff', borderTopColor:'#289C3B' },
       showLabel: true,
       labelStyle: {
         fontSize: 10,
       }
     }
 })
-export default TabNavi;
+
+
+const StackNavi = createStackNavigator ({
+  Home: {screen: TabNavi,},
+  Login: {screen: Login,},
+  Register: {screen: Register,},
+
+},{
+  headerMode: 'none',
+  initialRouteName: 'Login',
+  })
+
+export default StackNavi;
 
 const styles = StyleSheet.create({
   container: {
