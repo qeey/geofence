@@ -86,15 +86,14 @@ export default class Home extends React.Component{
   render(){
     return(
       <SafeAreaView style={{flex:1, backgroundColor:'#383838'}}>
-        <View style={{backgroundColor:'#289C3B', height:44, alignItems:'center', justifyContent:'center'}}>
-          <Text style={{color:'white', fontWeight:'bold'}}>Home</Text>
+
           <MapView
             style={styles.map}
             initialRegion={{
               latitude: this.state.latitude,
               longitude: this.state.longitute,
-              latitudeDelta: 0.015 * 5,
-              longitudeDelta: 0.0121 * 5
+              // latitudeDelta: 0.015 * 5,
+              // longitudeDelta: 0.0121 * 5
              }}
             showsUserLocation={true}
             followUserLocation={true}
@@ -133,28 +132,13 @@ export default class Home extends React.Component{
             //image={require("./images/login-logo.png")}
             //pinColor={"gray"}
           />
-          {/*
 
-          <MapView.Marker
-            coordinate={{ latitude: 23.1793, longitude: 75.7849 }}
-            title={"Captain"}
-            description={"indore"}
-            centerOffset={{ x: 20, y: 70 }}
-          /> */}
-
-          {/*<Image
-            source={require("./images/ic_log_in_top.png")}
-            style={{ width: 70, height: 70, marginTop: 10, paddingLeft: 10 }}
-          />*/}
-          {/*<Overlay
-            image="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"
-            bounds={[
-              [23.1793, 75.7849],
-              [this.state.latitude, this.state.longitute]
-            ]}
-          />*/}
           </MapView>
-      </View>
+
+          <View style={{backgroundColor:'#289C3B', height:44, alignItems:'center', justifyContent:'center'}}>
+            <Text style={{color:'white', fontWeight:'bold'}}>Home</Text>
+          </View>
+
 
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Lists')} style   ={{position:'absolute', bottom:15, right:15, height:70, width:70, borderRadius:35, padding:10, backgroundColor:'#289C3B', alignItems:'center', justifyContent:'center'}}>
           <Icon name="arrow-right" color="white" size ={15}/>
