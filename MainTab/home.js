@@ -12,8 +12,8 @@ export default class Home extends React.Component{
     this.state = {
       latitude: 0,
       longitute: 0,
-      lat: 22.7196,
-      lng: 75.8577,
+      lat: 2.3113,
+      lng: 102.4309,
       timestamp: null
     };
     /* markers: [{
@@ -57,7 +57,7 @@ export default class Home extends React.Component{
     polygon = [
       { lat: this.state.latitude, lng: this.state.longitute },
       { lat: this.state.lat, lng: this.state.lng },
-      { lat: 22.7192, lng: 75.852 },
+      { lat: 2.3113, lng: 102.4309 },
       { lat: this.state.latitude, lng: this.state.longitute }
       // last point has to be same as first point
     ];
@@ -65,8 +65,8 @@ export default class Home extends React.Component{
 
     //-----------------another user point-----------//
     let point = {
-      lat: 22.7192,
-      lng: 75.852
+      lat: 2.3113,
+      lng: 102.4309
     };
 
     //-----------------point end of user-------------//
@@ -74,10 +74,6 @@ export default class Home extends React.Component{
     // set point and polygon on containsLocation method
 
     GeoFencing.containsLocation(point, polygon)
-      .then(() => ToastAndroid.show("User is within area", ToastAndroid.SHORT))
-      .catch(() =>
-        ToastAndroid.show("User is not within area", ToastAndroid.SHORT)
-      );
   }
 
 
@@ -134,10 +130,6 @@ export default class Home extends React.Component{
           />
 
           </MapView>
-
-          <View style={{backgroundColor:'#289C3B', height:44, alignItems:'center', justifyContent:'center'}}>
-            <Text style={{color:'white', fontWeight:'bold'}}>Home</Text>
-          </View>
 
 
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Lists')} style   ={{position:'absolute', bottom:15, right:15, height:70, width:70, borderRadius:35, padding:10, backgroundColor:'#289C3B', alignItems:'center', justifyContent:'center'}}>

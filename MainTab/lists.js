@@ -6,7 +6,9 @@ export default class Lists extends React.Component{
   constructor(){
     super()
     this.state = {
-      tabView: 'battery'
+      tabView: 'battery',
+      battery: '',
+
     }
   }
 
@@ -74,6 +76,7 @@ export default class Lists extends React.Component{
     if(this.state.tabView === 'battery'){
       bottomView =
       <View style={{margin:15}}>
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate({cart})}>
         <View style={{backgroundColor:'white',marginBottom:15, padding:15}}>
           <Text>Battery CCU</Text>
           <Text>RM 300</Text>
@@ -86,6 +89,8 @@ export default class Lists extends React.Component{
             <Text>LAZADA</Text>
           </View>
         </View>
+         
+        </TouchableWithoutFeedback>
         <View style={{backgroundColor:'white',padding:15, marginBottom:15}}>
           <Text>Battery BUU</Text>
           <Text>RM 299</Text>
@@ -199,11 +204,11 @@ export default class Lists extends React.Component{
 
     return(
       <SafeAreaView style={{flex:1, backgroundColor:'#383838'}}>
-        <View style={{backgroundColor:'#289C3B', height:44, alignItems:'center', flexDirection:'row', justifyContent:'space-between'}}>
+        <TouchableOpacity onPress={() =>this.props.navigation.goBack(null)} style={{backgroundColor:'#289C3B', height:44, alignItems:'center', flexDirection:'row', justifyContent:'space-between'}}>
           <Icon name="chevron-left" color='white' size={15} style={{marginLeft:6}} />
           <Text style={{color:'white', fontWeight:'bold'}}>Home</Text>
           <Icon name="chevron-left" color='#289C3B' size={15} style={{marginRight:6}} />
-        </View>
+        </TouchableOpacity>
 
         <View style={{backgroundColor:'white', flexDirection:'row', alignItems:'center', justifyContent:'space-between' }}>
           {battery}

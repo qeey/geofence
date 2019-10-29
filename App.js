@@ -35,10 +35,11 @@ import Booking from './Main/booking.js';
 //MAIN
 import home from './MainTab/home.js';
 import profile from './MainTab/profile.js';
-import lists from './MainTab/lists.js';
+import Lists from './MainTab/lists.js';
 import settings from './MainTab/settings.js';
 import history from './MainTab/history.js';
 import payment from './MainTab/payment.js';
+import cart from './MainTab/cart.js';
 
 
 
@@ -66,6 +67,7 @@ class App extends React.Component{
 const homeStack = createStackNavigator({
   First :{screen :home,},
   Lists : {screen: lists,},
+  cart :{screen:cart,},
 }, {headerMode:'none'})
 
 const TabNavi = createBottomTabNavigator({
